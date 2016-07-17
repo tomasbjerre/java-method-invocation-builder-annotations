@@ -1,0 +1,126 @@
+buildscript {
+ repositories {
+  jcenter()
+  maven {
+   url "https://plugins.gradle.org/m2/"
+  }
+ }
+ dependencies {
+  classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+  classpath 'net.researchgate:gradle-release:2.2.2'
+  classpath "gradle.plugin.se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.33"
+ }
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+apply plugin: 'signing'
+apply plugin: 'com.bmuschko.nexus'
+apply plugin: 'net.researchgate.release'
+apply plugin: "se.bjurr.gitchangelog.git-changelog-gradle-plugin"
+
+task gitChangelogTask(type: se.bjurr.gitchangelog.plugin.gradle.GitChangelogTask) {
+ filePath = "CHANGELOG.md";
+ templateContent = """
+# Changelog
+
+{{#tags}}
+## {{name}}
+ {{#issues}}
+  {{#hasIssue}}
+   {{#hasLink}}
+### {{name}} [{{issue}}]({{link}}) {{title}}
+   {{/hasLink}}
+   {{^hasLink}}
+### {{name}} {{issue}} {{title}}
+   {{/hasLink}}
+  {{/hasIssue}}
+  {{^hasIssue}}
+### {{name}}
+  {{/hasIssue}}
+
+  {{#commits}}
+**{{{messageTitle}}}**
+
+{{#messageBodyItems}}
+ * {{.}} 
+{{/messageBodyItems}}
+
+[{{hash}}](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/{{hash}}) {{authorName}} *{{commitTime}}*
+
+  {{/commits}}
+
+ {{/issues}}
+{{/tags}}
+ """;
+ removeIssueFromMessage = true
+}
+
+group = 'se.bjurr.jmib'
+
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
+
+repositories {
+ mavenLocal()
+ mavenCentral()
+}
+
+eclipse {
+ classpath {
+  downloadSources = true
+  downloadJavadoc = true
+ }
+}
+
+sourceSets {
+ main.java.srcDirs = ['src/main/java' ]
+}
+
+if (JavaVersion.current().isJava8Compatible()) {
+ allprojects {
+  tasks.withType(Javadoc) {
+   options.addStringOption('Xdoclint:none', '-quiet')
+  }
+ }
+}
+
+modifyPom {
+ project {
+  name 'Java Method Invocation Builder Annotations'
+  description 'Generates builders for invoking methods on instantiated objects.'
+  url 'https://github.com/tomasbjerre/java-method-invocation-builder-annotations'
+  inceptionYear '2016'
+   scm {
+   url 'https://github.com/tomasbjerre/java-method-invocation-builder-annotations'
+   connection 'scm:https://tomasbjerre@github.com/tomasbjerre/java-method-invocation-builder-annotations.git'
+   developerConnection 'scm:git://github.com/tomasbjerre/java-method-invocation-builder-annotations.git'
+  }
+
+  licenses {
+   license {
+    name 'The Apache Software License, Version 2.0'
+    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    distribution 'repo'
+   }
+  }
+
+  developers {
+   developer {
+    id 'tomasbjerre'
+    name 'Tomas Bjerre'
+    email 'tomas.bjerre85@gmail.com'
+   }
+  }
+ }
+}
+
+extraArchive {
+ sources = true
+ javadoc = true
+}
+
+afterReleaseBuild.dependsOn {
+ [install, uploadArchives]
+}
