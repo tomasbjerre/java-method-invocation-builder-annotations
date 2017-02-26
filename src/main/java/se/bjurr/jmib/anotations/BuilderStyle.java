@@ -5,6 +5,6 @@ public enum BuilderStyle {
   SUPPLY_INSTANCE_AS_INVOKE_PARAMETER,
   /** Create an <code>on(instance)</code> and <code>invoke()</code>. */
   SUPPLY_INSTANCE_WITH_ON_METHOD,
-  /** Create an <code>on(instance)</code> and <code>invoke(instance)</code>. */
-  DEFAULT
+  /** Create an instance parameter in the constructor. */
+  SUPPLY_INSTANCE_IN_CONSTRUCTOR
 }
