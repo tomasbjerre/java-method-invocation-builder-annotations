@@ -1,10 +1,10 @@
 package se.bjurr.jmib.anotations;
 
-public enum InvocationStyle {
+public enum BuilderStyle {
   /** Create an <code>invoke(instance)</code>. */
-  INVOKE_AT_END,
+  SUPPLY_INSTANCE_AS_INVOKE_PARAMETER,
   /** Create an <code>on(instance)</code> and <code>invoke()</code>. */
-  INVOKE_WITH_ON,
+  SUPPLY_INSTANCE_WITH_ON_METHOD,
   /** Create an <code>on(instance)</code> and <code>invoke(instance)</code>. */
-  INVOKE_AUTO
+  DEFAULT
 }
