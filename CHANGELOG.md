@@ -1,3 +1,8 @@
+## 1.4.2 (2025-02-09)
+
+### Dependency updates
+
+- cleanup and dependency updates ([7850c](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/7850c3300bf0024) Tomas Bjerre)  
 
  # Java method invocation builder annotations changelog
 
