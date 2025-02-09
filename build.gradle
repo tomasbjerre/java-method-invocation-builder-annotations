@@ -1,18 +1,5 @@
-apply plugin: 'java'
-
-project.ext.tags = ['clean-code']
-group = 'se.bjurr.jmib'
-description = 'Generates builders for invoking methods on instantiated objects'
-
-
-buildscript {
- repositories {
-  maven { url "https://jitpack.io" }
- }
- dependencies {
-  classpath 'com.github.tomasbjerre:gradle-scripts:master-SNAPSHOT'
- }
+plugins {
+	id "se.bjurr.gradle.conventional-release"
+	id "se.bjurr.gradle.java-convention"
+	id "se.bjurr.gradle.update-versions"
 }
-apply from: project.buildscript.classLoader.getResource('java.gradle').toURI()
-apply from: project.buildscript.classLoader.getResource('changelog.gradle').toURI()
-apply from: project.buildscript.classLoader.getResource('release.gradle').toURI()
