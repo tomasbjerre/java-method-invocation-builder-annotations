@@ -1,3 +1,26 @@
+## 1.5.0 (2026-09-14)
+
+### Features
+
+-  **ci**  add draft/publish release workflow ([348a4](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/348a4aed75394be) Tomas Bjerre)  
+
+### Dependency updates
+
+- update gradle-conventions to 2.2.1 and gradle wrapper to 9.7.1 ([75898](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/75898f22b43e54c) Tomas Bjerre)  
+- pin gradle-conventions to 2.1.2 (was floating on 1.+) ([8c4fa](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/8c4fa3c95e8067d) Tomas Bjerre)  
+- gradle 9 ([cd54c](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/cd54c2deacec50d) Tomas Bjerre)  
+### Other changes
+
+**Fix broken Maven Central badge in README**
+
+* maven-badges.herokuapp.com is down; switch to img.shields.io badge 
+* linking to search.maven.org. 
+* Co-Authored-By: Claude Sonnet 5 &lt;noreply@anthropic.com&gt; 
+* Claude-Session: https://claude.ai/code/session_011PGVf85V1VhJj4oM3rKh7b 
+
+[d8846](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/d8846e9d121705d) Tomas Bjerre *2026-09-13 08:52:01*
+
+
 ## 1.4.2 (2025-02-09)
 
 ### Dependency updates
