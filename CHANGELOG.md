@@ -1,3 +1,21 @@
+## 1.5.1 (2026-09-20)
+
+### Dependency updates
+
+- update plugin se.bjurr.gradle.bundle-jar to v2.4.0 (#1) ([c0bee](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/c0bee53e5aa2ec1) renovate[bot])  
+### Other changes
+
+**Superseded by centralized publish-draft-releases.yaml in .github**
+
+
+[f8bff](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/f8bffe1972db982) Tomas Bjerre *2026-09-14 19:58:45*
+
+**Auto-publish pending draft releases weekly**
+
+
+[33e30](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/33e304a6b88c5b5) Tomas Bjerre *2026-09-14 19:47:44*
+
+
 ## 1.5.0 (2026-09-14)
 
 ### Features
