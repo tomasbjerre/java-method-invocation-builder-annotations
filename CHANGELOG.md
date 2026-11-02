@@ -1,3 +1,9 @@
+## 1.5.3 (2026-10-20)
+
+### Dependency updates
+
+- update dependency gradle to v9.8.2 (#7) ([e3eaa](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/e3eaa7c591b4016) renovate[bot])  
+- update dependency gradle to v9.8.1 (#6) ([42260](https://github.com/tomasbjerre/java-method-invocation-builder-annotations/commit/42260b0244026cf) renovate[bot])  
 ## 1.5.2 (2026-10-03)
 
 ### Bug Fixes
